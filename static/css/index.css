@@ -363,8 +363,8 @@ body {
 
 .header-wrapper {
   /* background: linear-gradient(-235deg, #1E0844 10%, #23316E 45%, #FE8383 75%, #F2E6C9 100%); */
-  /* background: linear-gradient(-210deg, #f5fff3 50%, #f6f8ff 50%); */
-  background: linear-gradient(135deg, #e6fee2 0%, #f5fff3 30%, #f6f8ff 80%, #e8edff 100%);
+  background: linear-gradient(-210deg, #ffffff 50%, #ffffff 50%);
+  /* background: linear-gradient(135deg, #e6fee2 0%, #f5fff3 30%, #f6f8ff 80%, #e8edff 100%); */
 
 }
 
