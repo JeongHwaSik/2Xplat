@@ -1,5 +1,5 @@
 <div align="center">
-<h1>2<img src="./assets/x-gradient.svg" alt="X" style="height: 60px; vertical-align: -5px; margin: 0 2px;">plat: Two Experts Are Better Than One Generalist</h1>
+<h1>2<img src="./assets/x-gradient.svg" alt="X" style="height: 60px; vertical-align: -20px; margin: 0 2px;">plat: Two Experts Are Better Than One Generalist</h1>
 
 <a href=""><img src="https://img.shields.io/badge/2Xplat-ArXiv-red" alt="arXiv"></a> <a href=""><img src="https://img.shields.io/badge/2Xplat-Project_Page-blue" alt="Project Page"></a>
 
