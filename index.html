@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -6,21 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="./static/images/2Xplat_emoji.png">
   <title>2Xplat</title>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-PYVRSFMDRL');
   </script>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@500;600;700&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
@@ -28,6 +28,1009 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+
+  <style>
+    /* ── HEADER / AUTHOR / BUTTON OVERRIDES ── */
+
+    html {
+      background:
+        radial-gradient(circle at top left, rgba(216, 199, 178, 0.88), transparent 30%),
+        radial-gradient(circle at top right, rgba(196, 209, 228, 0.76), transparent 28%),
+        linear-gradient(180deg, #f1ece4 0%, #e9e1d7 44%, #e1d7cb 100%);
+    }
+
+    /* Nav */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 56px;
+      background:
+        linear-gradient(135deg, rgba(234, 226, 216, 0.94), rgba(248, 242, 234, 0.88)),
+        linear-gradient(90deg, rgba(8, 196, 55, 0.05), rgba(19, 30, 226, 0.07));
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(77, 67, 55, 0.14);
+      box-shadow: 0 12px 30px rgba(58, 47, 37, 0.08);
+    }
+
+    body,
+    button,
+    input,
+    select,
+    textarea,
+    p,
+    .content,
+    .content p,
+    .subtitle,
+    .subtitle.is-5,
+    .subtitle.has-text-centered,
+    .publication-authors,
+    .new-btn,
+    .carousel-left-label-text {
+      font-family: 'Sora', 'Noto Sans', sans-serif;
+      color: #1f2940;
+    }
+
+    body {
+      background: transparent;
+    }
+
+    .nav-brand {
+      color: #152033;
+      text-decoration: none;
+      font-family: 'Cormorant Infant', 'Castoro', serif;
+      font-size: 1.15rem;
+      line-height: 1;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-brand .nx {
+      display: inline-block;
+      font-size: 1.2em;
+      background: linear-gradient(90deg, #08c437, #131ee2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.4rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      font-family: 'Cormorant Infant', 'Castoro', serif;
+      color: #4c576f;
+      text-decoration: none;
+      font-size: 1.06rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: none;
+      transition: color 0.2s, opacity 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #111a2b;
+    }
+
+    /* Header layout */
+    .header-container {
+      max-width: 1100px;
+    }
+
+    .header-content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 1.2rem 2rem 2rem;
+      background: transparent;
+      border: none;
+      border-radius: 28px;
+      box-shadow: none;
+      text-align: center;
+    }
+
+    /* Publication title — keep original */
+    .publication-title {
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0.9rem !important;
+      line-height: 1.04;
+      font-family: 'Castoro', serif;
+    }
+
+    .title-lockup {
+      display: inline-flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 0;
+      margin-top: 0.4rem;
+    }
+
+    .title-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .title-mark {
+      position: relative;
+      display: inline-block;
+      font-size: clamp(4.9rem, 12.6vw, 8.8rem);
+      font-weight: 700;
+      letter-spacing: -0.06em;
+      line-height: 0.9;
+      color: #132033;
+      letter-spacing: 0.001em;
+    }
+
+    .title-mark .x-mark {
+      display: inline-block;
+      background: linear-gradient(90deg, #08c437, #131ee2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      transform: translateY(-0.02em);
+      margin: 0em 0em;
+      letter-spacing: 0.005em;
+    }
+
+    .title-badge {
+      position: absolute;
+      right: -0.4em;
+      bottom: -0.45em;
+      width: clamp(48px, 6vw, 70px) !important;
+      height: clamp(48px, 6vw, 70px) !important;
+      margin: 0 !important;
+      transform: rotate(-8deg);
+      filter: drop-shadow(0 6px 14px rgba(19, 30, 226, 0.16));
+      pointer-events: none;
+      object-fit: contain;
+      aspect-ratio: 1 / 1;
+      vertical-align: baseline;
+    }
+
+    .title-sub {
+      margin-top: 2.5rem;
+      max-width: 760px;
+      font-family: 'Cormorant Infant', 'Castoro', serif;
+      font-size: clamp(1.02rem, 2.5vw, 2rem);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.35;
+      color: #3f4b62;
+    }
+
+    /* ── AUTHORS ── */
+    .publication-authors {
+      max-width: 860px;
+      margin: 0 auto;
+      font-family: 'Manrope', 'Sora', sans-serif;
+      font-size: 1.08rem;
+      line-height: 2.05;
+      text-align: center;
+    }
+
+    /* Two rows of authors */
+    .authors-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .author-link {
+      display: inline-flex;
+      align-items: baseline;
+      margin: 0 0.58rem;
+      text-decoration: none;
+      color: #1d2738;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      border-bottom: 1px solid transparent;
+      transition: color .18s, border-color .18s;
+    }
+
+    .author-link:hover {
+      color: #131ee2;
+      border-color: rgba(19, 30, 226, 0.35);
+    }
+
+    .author-link sup {
+      font-size: 0.62em;
+      color: #8892a2;
+      font-weight: 400;
+      margin-left: 1px;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    /* affiliations */
+    .affiliation-line {
+      margin-top: 0.7rem;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.12rem;
+      color: #33415c;
+      letter-spacing: 0.01em;
+    }
+
+    .affiliation-chip {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 3px;
+      margin: 0 0.65rem;
+    }
+
+    .affiliation-chip sup {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.62em;
+      color: #8892a2;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    /* equal contribution note */
+    .author-note {
+      margin-top: 0.55rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #6e7b94;
+      font-weight: 700;
+      font-family: 'Manrope', 'Sora', sans-serif;
+    }
+
+    .author-note span {
+      margin: 0 0.5rem;
+    }
+
+    /* ── BUTTONS ── */
+    /* neutralise index.css overrides */
+    .publication-links {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      gap: 0.85rem !important;
+      margin: 1.35rem auto 0 !important;
+      max-width: 460px;
+    }
+
+    /* kill index.css .link-block a dark style */
+    .publication-links .link-block {
+      margin: 0 !important;
+    }
+
+    .publication-links .link-block a.new-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 7px !important;
+      padding: 0 1.55rem !important;
+      height: 50px !important;
+      min-width: 132px !important;
+      border-radius: 10px !important;
+      text-decoration: none !important;
+      font-family: 'Manrope', 'Sora', sans-serif !important;
+      font-size: 0.92rem !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.02em !important;
+      line-height: 1 !important;
+      color: #ffffff !important;
+      background: linear-gradient(180deg, #20242d, #14181f) !important;
+      border: 1px solid rgba(20, 24, 31, 0.9) !important;
+      box-shadow: 0 12px 24px rgba(17, 22, 30, 0.16) !important;
+      transition: border-color .18s, transform .18s, box-shadow .18s, background .18s, color .18s !important;
+      white-space: nowrap !important;
+      cursor: pointer !important;
+      appearance: none !important;
+      -webkit-appearance: none !important;
+    }
+
+    .publication-links .link-block a.new-btn:hover {
+      color: #ffffff !important;
+      background: linear-gradient(180deg, #2a303b, #191e26) !important;
+      border-color: rgba(42, 48, 59, 0.95) !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 16px 28px rgba(17, 22, 30, 0.22) !important;
+    }
+
+    .publication-links .link-block a.new-btn:active {
+      transform: translateY(0) !important;
+    }
+
+    .publication-links .link-block a.new-btn svg {
+      width: 24px !important;
+      height: 18px !important;
+      stroke: rgba(255, 255, 255, 0.78) !important;
+      fill: none !important;
+      stroke-width: 1.8 !important;
+      stroke-linecap: round !important;
+      stroke-linejoin: round !important;
+      flex-shrink: 0 !important;
+      transition: stroke .18s !important;
+    }
+
+    .publication-links .link-block a.new-btn:hover svg {
+      stroke: #ffffff !important;
+    }
+
+    .title.is-3 {
+      display: inline-block;
+      position: relative;
+      padding: 0 0.25rem 0.8rem;
+      margin-bottom: 1.15rem !important;
+      font-family: 'Cormorant Infant', 'Castoro', serif !important;
+      font-size: clamp(2.05rem, 3.8vw, 2.85rem) !important;
+      font-weight: 700 !important;
+      letter-spacing: -0.012em !important;
+      line-height: 1.1 !important;
+      color: #16223a !important;
+      text-shadow: none;
+    }
+
+    .title.is-3::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: auto;
+      bottom: 0;
+      width: 74px;
+      height: 1px;
+      border-radius: 999px;
+      transform: translateX(-50%);
+      background: rgba(22, 34, 58, 0.18);
+    }
+
+    .title.is-3::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: min(190px, 58%);
+      height: 2px;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(8, 196, 55, 0), rgba(8, 196, 55, 0.55), rgba(19, 30, 226, 0.55), rgba(19, 30, 226, 0));
+      box-shadow: none;
+    }
+
+    .subtitle.has-text-centered,
+    .subtitle.is-5 {
+      max-width: 880px;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: 'Cormorant Infant', 'Castoro', serif;
+      color: #5e6b84 !important;
+      line-height: 1.82 !important;
+      letter-spacing: -0.01em;
+    }
+
+    .subtitle.has-text-centered {
+      font-size: 1.14rem !important;
+      margin-top: 1.1rem !important;
+    }
+
+    .subtitle.is-5 {
+      font-size: 1.08rem !important;
+      margin-top: 1rem !important;
+    }
+
+    .subtitle b {
+      color: #1e2b46;
+      font-weight: 700;
+    }
+
+    .carousel-left-label-text {
+      font-size: 0.84rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.12em !important;
+      text-transform: uppercase;
+      color: #72809a !important;
+    }
+
+    .result-head {
+      max-width: 1240px;
+      margin: 0 auto 0.18rem;
+      padding: 0 1rem;
+      text-align: left;
+      padding-left: 2rem;
+    }
+
+    .result-kicker {
+      display: inline-block;
+      margin-bottom: 0.45rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #72809a;
+    }
+
+    .result-head-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+    }
+
+    .result-title-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .result-title {
+      margin: 0;
+      font-family: 'Cormorant Infant', 'Castoro', serif;
+      font-size: clamp(1.55rem, 3vw, 2.1rem);
+      font-weight: 700;
+      line-height: 1.14;
+      letter-spacing: -0.012em;
+      color: #17233a;
+    }
+
+    .result-meta {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-top: 0;
+    }
+
+    .result-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.42rem 0.82rem;
+      border-radius: 999px;
+      border: 1px solid rgba(22, 34, 58, 0.1);
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 8px 18px rgba(26, 38, 66, 0.04);
+      font-family: 'Sora', 'Noto Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #5d6b85;
+    }
+
+    .result-shell {
+      max-width: 1240px;
+      margin: 0 auto 2.8rem;
+      padding: 0 1rem;
+    }
+
+    #qualitative {
+      margin-top: 2.4rem;
+      margin-bottom: 0.0rem;
+    }
+
+    #qualitative+.result-shell {
+      margin-top: 0;
+    }
+
+    #comparison {
+      margin-top: 2.6rem;
+      margin-bottom: 0.08rem;
+    }
+
+    .comparison-shell {
+      max-width: 1240px;
+      margin: 0 auto 2.8rem;
+      padding: 0 1rem;
+    }
+
+    .mini-section-title {
+      margin: 1.25rem 0 0.35rem;
+      font-family: 'Cormorant Infant', 'Castoro', serif;
+      font-size: clamp(1.55rem, 2.8vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.12;
+      color: #17233a;
+      text-align: center;
+    }
+
+    .hero.is-light.is-small {
+      background: transparent !important;
+    }
+
+    .hero.is-light.is-small .hero-body {
+      padding-top: 0.3rem;
+      padding-bottom: 1.65rem;
+    }
+
+    .comparison-hero .hero-body {
+      padding-top: 0.14rem;
+    }
+
+    .section-divider {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 1.8rem auto 0.8rem;
+      pointer-events: none;
+    }
+
+    .section-divider::before {
+      content: "";
+      width: min(170px, 24vw);
+      height: 1px;
+      background: linear-gradient(90deg,
+          rgba(19, 32, 51, 0),
+          rgba(19, 32, 51, 0.18),
+          rgba(19, 32, 51, 0));
+      box-shadow: 0 8px 24px rgba(19, 32, 51, 0.06);
+    }
+
+    .teaser-spotlight {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 0.05rem;
+    }
+
+    .teaser-frame {
+      position: relative;
+      padding: 0.9rem 0.01Rem;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.26));
+      border: 1px solid rgba(22, 34, 58, 0.08);
+      box-shadow: 0 18px 42px rgba(43, 35, 27, 0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .teaser-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at top left, rgba(8, 196, 55, 0.08), transparent 24%),
+        radial-gradient(circle at top right, rgba(19, 30, 226, 0.08), transparent 24%);
+      pointer-events: none;
+    }
+
+    #abstract {
+      padding-top: 8rem;
+    }
+
+    .section-tone {
+      position: relative;
+      margin: 0;
+      padding: 2.4rem 0;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .section-tone-warm {
+      background: linear-gradient(180deg, rgba(255, 249, 241, 0.38), rgba(250, 243, 233, 0.22));
+    }
+
+    .section-tone-cool {
+      background: linear-gradient(180deg, rgba(246, 249, 255, 0.34), rgba(237, 242, 250, 0.18));
+    }
+
+    .section-tone-neutral {
+      background: linear-gradient(180deg, rgba(252, 249, 245, 0.24), rgba(246, 240, 233, 0.12));
+    }
+
+    #abstract .content {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    #abstract .content p {
+      font-family: 'Cormorant Infant', 'Castoro', serif;
+      font-size: 1.18rem;
+      line-height: 1.9;
+      letter-spacing: -0.005em;
+      color: #3f4a60;
+    }
+
+    .method-section {
+      padding-top: 4rem;
+    }
+
+    .method-section .content {
+      max-width: 860px;
+      margin: 0 auto 1.8rem;
+    }
+
+    .method-section .content p {
+      font-family: 'Cormorant Infant', 'Castoro', serif;
+      font-size: 1.14rem;
+      line-height: 1.88;
+      letter-spacing: -0.004em;
+      color: #45516a;
+    }
+
+    .method-figure {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .method-frame {
+      position: relative;
+      padding: 1rem;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.26));
+      border: 1px solid rgba(22, 34, 58, 0.08);
+      box-shadow: 0 18px 42px rgba(43, 35, 27, 0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .method-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at top left, rgba(8, 196, 55, 0.08), transparent 24%),
+        radial-gradient(circle at top right, rgba(19, 30, 226, 0.08), transparent 24%);
+      pointer-events: none;
+    }
+
+    .method-frame img {
+      position: relative;
+      display: block;
+      width: 100%;
+      border-radius: 18px;
+      z-index: 1;
+    }
+
+    .quant-section .content {
+      max-width: 860px;
+      margin: 0 auto 1.8rem;
+    }
+
+    .quant-section {
+      padding-top: 4rem;
+    }
+
+    .quant-section .content p {
+      font-family: 'Cormorant Infant', 'Castoro', serif;
+      font-size: 1.14rem;
+      line-height: 1.88;
+      letter-spacing: -0.004em;
+      color: #45516a;
+    }
+
+    .quant-figure {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .quant-frame {
+      position: relative;
+      padding: 1rem;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.24));
+      border: 1px solid rgba(22, 34, 58, 0.08);
+      box-shadow: 0 18px 42px rgba(43, 35, 27, 0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .quant-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at top left, rgba(8, 196, 55, 0.07), transparent 24%),
+        radial-gradient(circle at top right, rgba(19, 30, 226, 0.07), transparent 24%);
+      pointer-events: none;
+    }
+
+    .quant-frame img {
+      position: relative;
+      display: block;
+      width: 100%;
+      border-radius: 18px;
+      z-index: 1;
+    }
+
+    #carousel-re10k,
+    #carousel-dl3dv-hr,
+    .carousel-row-wrapper,
+    #carousel-comparison-12v {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(22, 34, 58, 0.08);
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.24));
+      box-shadow: 0 18px 42px rgba(43, 35, 27, 0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    #carousel-re10k::before,
+    #carousel-dl3dv-hr::before,
+    .carousel-row-wrapper::before,
+    #carousel-comparison-12v::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at top left, rgba(8, 196, 55, 0.07), transparent 24%),
+        radial-gradient(circle at top right, rgba(19, 30, 226, 0.07), transparent 24%);
+      pointer-events: none;
+    }
+
+    #carousel-re10k,
+    #carousel-dl3dv-hr,
+    #carousel-comparison-12v {
+      padding: 0.6rem;
+    }
+
+    .carousel-row-wrapper {
+      padding: 0.6rem;
+      margin-bottom: 0.9rem;
+      gap: 5px;
+    }
+
+    .result-shell-multirow .hero-body .container>.carousel-row-wrapper:first-child {
+      margin-top: -0.12rem;
+      padding-top: 0.5rem;
+    }
+
+    .results-carousel .slider-item,
+    .results-carousel .item {
+      padding: 0.16rem;
+    }
+
+    .results-carousel .slider-item>*,
+    .results-carousel .item>* {
+      position: relative;
+      display: block;
+      width: 100%;
+      border-radius: 16px;
+    }
+
+    .results-carousel .slider-item>*::before,
+    .results-carousel .item>*::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 26%);
+      pointer-events: none;
+    }
+
+    .results-carousel video {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+      border: 1px solid rgba(18, 28, 46, 0.08);
+      background: linear-gradient(180deg, #0f1727, #19243a);
+      box-shadow:
+        0 14px 30px rgba(15, 23, 39, 0.12),
+        0 2px 8px rgba(15, 23, 39, 0.05);
+      transition: transform 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease, border-color 0.28s ease;
+      filter: saturate(1.02) contrast(1.01);
+    }
+
+    .results-carousel .slider-item:hover video,
+    .results-carousel .item:hover video {
+      transform: translateY(-2px) scale(1.006);
+      border-color: rgba(19, 30, 226, 0.14);
+      box-shadow:
+        0 22px 40px rgba(15, 23, 39, 0.15),
+        0 4px 12px rgba(15, 23, 39, 0.07);
+      filter: saturate(1.04) contrast(1.02);
+    }
+
+    .video-slider-container {
+      padding: 0.16rem;
+    }
+
+    .video-slider-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid rgba(18, 28, 46, 0.08);
+      background: linear-gradient(180deg, #0f1727, #19243a);
+      box-shadow:
+        0 18px 34px rgba(15, 23, 39, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .video-slider-wrapper::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 22%);
+      pointer-events: none;
+    }
+
+    .video-slider-wrapper canvas {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: inherit;
+    }
+
+    #carousel-comparison-12v .video-slider-container {
+      width: 100%;
+      max-width: none;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      margin: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+    }
+
+    #carousel-comparison-12v .video-slider-wrapper,
+    #carousel-comparison-12v .video-slider-wrapper canvas {
+      width: 100%;
+      height: 100%;
+    }
+
+    #carousel-comparison-12v .video-label {
+      z-index: 12;
+      top: auto;
+      bottom: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 92px;
+      height: 34px;
+      padding: 0;
+      box-sizing: border-box;
+      border-radius: 999px;
+      background: rgba(9, 15, 26, 0.46);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 10px 20px rgba(6, 10, 18, 0.15);
+    }
+
+    #carousel-comparison-12v .video-label span {
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-family: 'Sora', 'Noto Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .slider-bar {
+      width: 2px;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 0 0 1px rgba(15, 23, 39, 0.1);
+    }
+
+    .slider-handle {
+      width: 18px;
+      height: 18px;
+      margin-left: 0px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid rgba(15, 23, 39, 0.12);
+      box-shadow:
+        0 10px 18px rgba(15, 23, 39, 0.2),
+        0 0 0 5px rgba(255, 255, 255, 0.16);
+    }
+
+    .video-toggle-button {
+      z-index: 12;
+      right: 12px;
+      bottom: 12px;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      background: rgba(10, 16, 28, 0.48);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 10px 20px rgba(6, 10, 18, 0.16);
+    }
+
+    .video-toggle-button img {
+      width: 16px;
+      height: 16px;
+    }
+
+    .carousel-left-label {
+      min-width: 44px;
+    }
+
+    @media (max-width: 768px) {
+      .site-nav {
+        padding: 0 1rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .header-content {
+        padding: 1.25rem 1rem 1.5rem;
+      }
+
+      .publication-links {
+        max-width: 100%;
+      }
+
+      .new-btn {
+        width: 100% !important;
+        justify-content: center !important;
+      }
+
+      .title-sub {
+        max-width: 100%;
+      }
+
+      .title-badge {
+        right: -0.1em;
+        bottom: -0.3em;
+      }
+
+      .title.is-3 {
+        padding-left: 0.6rem;
+        padding-right: 0.6rem;
+      }
+
+      .result-head,
+      .result-shell {
+        padding: 0 0.85rem;
+      }
+
+      .result-head {
+        padding-left: 0.85rem;
+      }
+
+      .result-shell {
+        margin-bottom: 2.15rem;
+      }
+
+      .result-title {
+        font-size: 2rem;
+      }
+
+      .result-head-inner,
+      .result-title-group {
+        align-items: flex-start;
+      }
+
+      .result-head {
+        text-align: left;
+      }
+
+      .result-meta {
+        justify-content: flex-start;
+      }
+
+      .results-carousel .slider-item,
+      .results-carousel .item,
+      .video-slider-container {
+        padding: 0.22rem;
+      }
+    }
+  </style>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -38,117 +1041,117 @@
 </head>
 
 <body>
+  <nav class="site-nav">
+    <a class="nav-brand" href="#">2<span class="nx">X</span>plat</a>
+    <ul class="nav-links">
+      <li><a href="#abstract">Abstract</a></li>
+      <li><a href="#method">Method</a></li>
+      <li><a href="#quantitative">Quant</a></li>
+      <li><a href="#qualitative">Qual</a></li>
+      <li><a href="#comparison">Compare</a></li>
+      <li><a href="#BibTeX">BibTeX</a></li>
+    </ul>
+  </nav>
 
-  <body>
-    <div class="header-wrapper">
-      <div class="header-container" id="header-container">
-        <div class="header-content">
-          <!-- Title -->
-          <!-- <h1 class="title is-1 publication-title"
-            style="font-weight: bold; margin-top: -0.5rem; color: rgb(56, 56, 56);">
-            2<span
-              style="background: linear-gradient(90deg, #08c437, #131ee2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block; font-size: 1.3em;">X</span>plat:
-            Two Experts Are Better Than
-            One Generalist
-          </h1>
-          <h1><img src="./static/images/2Xplat_emoji.png" alt="Title"
-              style="height: 100px; margin-top: -0.5em; margin-bottom: -0.2em;"></h1> -->
-          <h1><img src="./static/images/title_img.png" alt="Title"
-              style="height: 550px; width: 1350px; margin-top: -0.5em; margin-bottom: -0.2em;"></h1>
-          <!-- Corresponding Authors-->
-          <div class="is-size-5 publication-authors" style="margin-bottom: 0rem; margin-top: 0.5rem; color: black">
-            <span class="author-block">
-              <a href="https://github.com/JeongHwaSik"><span style="color:#000000;">Hwasik Jeong</span></a><sup
-                style="color: black;">1</sup><span style="color: black;"><sup>*</sup>,</span>
-              <a href="https://github.com/sngryongLee"><span style="color:#000000;">Seungryong Lee</span></a><sup
-                style="color: black;">2</sup><span style="color: black;"><sup>*</sup>,</span>
-              <a href="https://github.com/Gynjn"><span style="color:#000000;">Gyeongjin Kang</span></a><sup
-                style="color: black;">2</sup><span style="color: black;">,</span>
-              <a href="https://github.com/yang-gwon2"><span style="color:#000000;">Seungkwon Yang</span></a><sup
-                style="color: black;">1</sup><span style="color: black;">,</span>
-          </div>
-          <div class="is-size-5 publication-authors" style="margin-bottom: 1rem; color: black">
-            <span class="author-block">
-              <a href="https://github.com/Xiangyu1Sun"><span style="color:#000000;">Xiangyu Sun</span></a><sup
-                style="color: black;">2</sup><span style="color: black;">,</span>
-              <a href="https://github.com/stnamjef"><span style="color:#000000;">Seungtae Nam</span></a><sup
-                style="color: black;">1</sup><span style="color: black;">,</span>
-              <a href="https://silverbottlep.github.io/index.html"><span style="color:#000000;">Eunbyung
-                  Park</span></a><sup style="color: black;">1</sup><span
-                style="color: black;"><sup>&dagger;</sup></span>
-          </div>
-          <div class="is-size-5 publication-authors" style="margin-top: 1rem;">
-            <div style="display: inline-flex; gap: 1.5rem;">
-              <span class="author-block" style="color: black;"><sup>1</sup>Yonsei University</span>
-              <span class="author-block" style="color: black;"><sup>2</sup>Sungkyunkwan University</span>
-            </div>
-          </div>
-          <div class="is-size-5 publication-authors" style="margin-top: 0rem;">
-            <div style="display: inline-flex; gap: 1.5rem;">
-              <span class="author-block" style="color: rgb(105, 105, 105);">(*: equal contribution, †: corresponding
-                author)</span>
-            </div>
-          </div>
-          <!-- Relative Links -->
-          <div class="publication-links" style="margin-bottom: -1rem; margin-top: 1rem;">
-            <!-- TODO: PDF Link. -->
-            <span class="link-block">
-              <a href="" class="external-link button is-normal is-dark">
-                <span class="icon">
-                  <i class="fas fa-file-pdf"></i>
-                </span>
-                <span>Paper</span>
-              </a>
+  <div class="header-wrapper" id="top">
+    <div class="header-container" id="header-container">
+      <div class="header-content">
+
+        <!-- Title -->
+        <h1 class="title is-1 publication-title">
+          <span class="title-lockup">
+            <span class="title-stack">
+              <!-- <span class="title-mark">2<span class="x-mark">X</span>plat<img src="./static/images/2Xplat_emoji.png" alt="" class="title-badge"></span> -->
+              <span class="title-mark">2<span class="x-mark">X</span>plat</span>
+              <span class="title-sub">Two Experts Are Better Than One Generalist</span>
             </span>
-            <!-- TODO: PDF Link. -->
-            <span class="link-block">
-              <a href="" class="external-link button is-normal is-dark">
-                <span class="icon">
-                  <i class="ai ai-arxiv"></i>
-                </span>
-                <span>arXiv</span>
-              </a>
-            </span>
-            <!-- TODO: Code Link. -->
-            <span class="link-block">
-              <a href="" class="external-link button is-normal is-dark">
-                <span class="icon">
-                  <i class="fab fa-github"></i>
-                </span>
-                <span>Code</span>
-              </a>
-            </span>
+          </span>
+        </h1>
+
+        <!-- Authors -->
+        <div class="publication-authors" style="margin-top: 0.6rem;">
+
+          <!-- Row 1: 4 authors -->
+          <div class="authors-row">
+            <a class="author-link" href="https://github.com/JeongHwaSik">Hwasik Jeong<sup>1*</sup></a>
+            <a class="author-link" href="https://github.com/sngryongLee">Seungryong Lee<sup>2*</sup></a>
+            <a class="author-link" href="https://github.com/Gynjn">Gyeongjin Kang<sup>2</sup></a>
+            <a class="author-link" href="https://github.com/yang-gwon2">Seungkwon Yang<sup>1</sup></a>
           </div>
+
+          <!-- Row 2: 3 authors -->
+          <div class="authors-row">
+            <a class="author-link" href="https://github.com/Xiangyu1Sun">Xiangyu Sun<sup>2</sup></a>
+            <a class="author-link" href="https://github.com/stnamjef">Seungtae Nam<sup>1</sup></a>
+            <a class="author-link" href="https://silverbottlep.github.io/index.html">Eunbyung Park<sup>1†</sup></a>
+          </div>
+
+          <!-- Affiliations -->
+          <div class="affiliation-line">
+            <span class="affiliation-chip"><sup>1</sup>Yonsei University</span>
+            <span class="affiliation-chip"><sup>2</sup>Sungkyunkwan University</span>
+          </div>
+
+          <!-- Note -->
+          <p class="author-note">
+            <span>* Equal contribution</span>
+            <span>† Corresponding author</span>
+          </p>
+
+        </div><!-- /publication-authors -->
+        <!-- Buttons -->
+        <div class="publication-links">
+          <span class="link-block">
+            <a href="" class="new-btn">
+              <svg viewBox="0 0 24 24">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg>
+              Paper
+            </a>
+          </span>
+          <span class="link-block">
+            <a href="" class="new-btn">
+              <svg viewBox="0 0 24 24">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+              Code
+            </a>
+          </span>
         </div>
-      </div>
-    </div>
-  </body>
+
+      </div><!-- /header-content -->
+    </div><!-- /header-container -->
+  </div><!-- /header-wrapper -->
 
   <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="video">
-        <div id="teaser-loader" class="video-loader">
-          <div class="loader-content">
-            <span class="icon">
-              <i class="fas fa-spinner fa-pulse"></i>
-            </span>
-            <span>Loading...</span>
+    <div class="teaser-spotlight">
+      <div class="teaser-frame">
+        <div class="video">
+          <div id="teaser-loader" class="video-loader">
+            <div class="loader-content">
+              <span class="icon"><i class="fas fa-spinner fa-pulse"></i></span>
+              <span>Loading...</span>
+            </div>
           </div>
-        </div>
-        <div class="hero-body" style="margin-top: 4rem;">
-          <video poseter="" id="teaser" autoplay muted loop playsinline height="100%"
-            style="border-radius: 16px; overflow: hidden;">
-            <source src="./static/videos/main_teaser_v2_faster.mp4" type="video/mp4">
-          </video>
+          <div class="hero-body" style="margin-top: 0;">
+            <video id="teaser" autoplay muted loop playsinline height="100%"
+              style="border-radius: 18px; overflow: hidden;">
+              <source src="./static/videos/main_teaser.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <div class="section-divider" aria-hidden="true"></div>
 
-  <section class="section">
+  <section class="section section-tone section-tone-warm" id="abstract">
     <div class="container is-max-desktop">
-      <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths" style="margin-top: -3rem;">
           <h2 class="title is-3">Abstract</h2>
@@ -158,9 +1161,9 @@
               enabling high-quality Gaussian representations to be generated from uncalibrated multi-view images in a
               single forward pass. The dominant approach in this space adopts unified monolithic architectures, often
               built on geometry-centric 3D foundation models, to jointly estimate camera poses and synthesize 3DGS
-              representations within a single network. While architecturally streamlined, such "all-in-one" designs
+              representations within a single network. While architecturally streamlined, such ``all-in-one'' designs
               may be suboptimal for high-fidelity 3DGS generation, as they entangle geometric reasoning and appearance
-              modeling within a shared representation. In this work, we introduce <b>2Xplat</b>, a pose-free
+              modeling within a shared representation. In this work, we introduce \textit{2Xplat}, a pose-free
               feed-forward 3DGS framework based on a two-expert design that explicitly separates geometry estimation
               from Gaussian generation. A dedicated geometry expert first predicts camera poses, which are then
               explicitly passed to a powerful appearance expert that synthesizes 3D Gaussians. Despite its conceptual
@@ -173,886 +1176,542 @@
           </div>
         </div>
       </div>
-      <!--/ Abstract. -->
     </div>
   </section>
 
-  <section class="hero teaser">
+  <section class="section method-section section-tone section-tone-cool" id="method">
     <div class="container is-max-desktop">
-      <div class="hero-body" style="margin-top: 2rem;">
-        <img src="./static/images/teaser_top.png" />
-        <h2 class="subtitle has-text-centered">
-          <span> <b>2Xplat</b> decouples geometry estimation and appearance modeling for <b>pose-free</b> feed-forward
-            3DGS.</span>
-        </h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Method Overview</h2>
+          <div class="content has-text-justified">
+            <p>
+              <b>2Xplat</b> follows a two-expert design that explicitly decouples geometry estimation from appearance
+              modeling for pose-free feed-forward 3D Gaussian Splatting. A dedicated geometry expert first predicts
+              camera poses from uncalibrated input views, and those estimated poses are then passed to an appearance
+              expert that synthesizes the final 3D Gaussian representation. This decomposition allows each component to
+              focus on a more specialized role, leading to stronger reconstruction quality and more robust feed-forward
+              3DGS generation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="method-figure">
+      <div class="method-frame">
+        <img src="./static/images/teaser_top.png" alt="Method overview figure" />
       </div>
     </div>
   </section>
 
-
-  <section class="hero teaser">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths" style="margin-top: 0rem;">
-        <h2 class="title is-3" style="margin-top: 2.0rem;">Quantitative Comparison</h2>
-      </div>
-    </div>
+  <section class="section quant-section section-tone section-tone-neutral" id="quantitative">
     <div class="container is-max-desktop">
-      <div class="hero-body" style="margin-top: 0rem;">
-        <img src="./static/images/teaser_graph.png" />
-        <h2 class="subtitle has-text-centered">
-          <span>
-            <b>2Xplat</b>
-            consistently achieves higher PSNR than YoNoSplat across different view settings and backbone architectures
-            while maintaining comparable or significantly faster inference speed, demonstrating its robustness and
-            efficiency.</span>
-        </h2>
-
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Quantitative Comparison</h2>
+          <div class="content has-text-justified">
+            <p>
+              <b>2Xplat</b> consistently achieves higher PSNR than YoNoSplat across different view settings and backbone
+              architectures while maintaining comparable or significantly faster inference speed, demonstrating its
+              robustness and efficiency.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="quant-figure">
+      <div class="quant-frame">
+        <img src="./static/images/teaser_graph.png" alt="Quantitative comparison figure" />
       </div>
     </div>
   </section>
 
 
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-four-fifths" style="margin-top: 0rem;">
+  <div class="columns is-centered has-text-centered" id="qualitative">
+    <div class="column is-four-fifths" style="margin-top: 0rem; margin-bottom: 0.2rem;">
       <h2 class="title is-3" style="margin-top: 2.0rem;">Qualitative Results</h2>
     </div>
   </div>
-  <!--/ RE10K 224x224 Videos -->
-  <section class="hero is-light is-small">
-    <div class="hero-body">
-      <div class="container">
-        <div id="carousel-re10k" class="carousel results-carousel" data-slides-to-show="4">
-          <div class="item 0">
-            <video poster="" id="0" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/re10k_6v/0.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item 1">
-            <video poster="" id="1" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/re10k_6v/1.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item 2">
-            <video poster="" id="2" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/re10k_6v/2.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item 3">
-            <video poster="" id="3" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/re10k_6v/3.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item 4">
-            <video poster="" id="4" autoplay controls muted loop playsinline height="100%" preload="none">
-              <source src="./static/videos/re10k_6v/4.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item 5">
-            <video poster="" id="5" autoplay controls muted loop playsinline height="100%" preload="none">
-              <source src="./static/videos/re10k_6v/5.mp4" type="video/mp4">
-            </video>
-          </div>
-          <!-- <div class="item 6">
-            <video poster="" id="6" autoplay controls muted loop playsinline height="100%" preload="none">
-              <source src="./static/videos/re10k_6v/6.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item 7">
-            <video poster="" id="7" autoplay controls muted loop playsinline height="100%" preload="none">
-              <source src="./static/videos/re10k_6v/7.mp4" type="video/mp4">
-            </video>
-          </div> -->
+
+  <div class="result-shell">
+    <div class="result-head">
+      <div class="result-head-inner">
+        <div class="result-title-group">
+          <span class="result-kicker">Dataset</span>
+          <h3 class="result-title">RE10K</h3>
         </div>
-        <div class="has-text-centered">
-          <p class="subtitle is-5">Inference results on the <b>RE10K</b> dataset using 6 context views with a resolution
-            of 224×224.</p>
+        <div class="result-meta">
+          <span class="result-pill">224x224</span>
+          <span class="result-pill">6 Context Views</span>
         </div>
       </div>
     </div>
-  </section>
-
-  <!--/ DL3DV 224x224 Videos -->
-  <section class="hero is-light is-small">
-    <div class="hero-body">
-      <div class="container">
-        <!--/ 6 Input Views -->
-        <div class="carousel-row-wrapper">
-          <div class="carousel-left-label">
-            <div class="carousel-left-label-text">6 Views</div>
+    <section class="hero is-light is-small">
+      <div class="hero-body">
+        <div class="container">
+          <div id="carousel-re10k" class="carousel results-carousel" data-slides-to-show="4">
+            <div class="item 0"><video poster="" id="0" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/re10k_6v/0.mp4" type="video/mp4">
+              </video></div>
+            <div class="item 1"><video poster="" id="1" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/re10k_6v/1.mp4" type="video/mp4">
+              </video></div>
+            <div class="item 2"><video poster="" id="2" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/re10k_6v/2.mp4" type="video/mp4">
+              </video></div>
+            <div class="item 3"><video poster="" id="3" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/re10k_6v/3.mp4" type="video/mp4">
+              </video></div>
+            <div class="item 4"><video poster="" id="4" autoplay controls muted loop playsinline height="100%"
+                preload="none">
+                <source src="./static/videos/re10k_6v/4.mp4" type="video/mp4">
+              </video></div>
+            <div class="item 5"><video poster="" id="5" autoplay controls muted loop playsinline height="100%"
+                preload="none">
+                <source src="./static/videos/re10k_6v/5.mp4" type="video/mp4">
+              </video></div>
           </div>
-          <div class="carousel-content">
-
-            <div id="carousel-dl3dv-6v" class="carousel results-carousel" data-slides-to-show="4">
-
-              <div class="item 0">
-                <video poster="" id="0" autoplay controls muted loop playsinline height="100%">
-                  <source src="./static/videos/dl3dv_lr_6v/0.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="item 1">
-                <video poster="" id="1" autoplay controls muted loop playsinline height="100%">
-                  <source src="./static/videos/dl3dv_lr_6v/1.mp4" type="video/mp4">
-                </video>
-              </div>
-              <!-- <div class="item 2">
-                <video poster="" id="2" autoplay controls muted loop playsinline height="100%">
-                  <source src="./static/videos/dl3dv_lr_6v/2.mp4" type="video/mp4">
-                </video>
-              </div> -->
-              <!-- <div class="item 3">
-                <video poster="" id="3" autoplay controls muted loop playsinline height="100%">
-                  <source src="./static/videos/dl3dv_lr_6v/3.mp4" type="video/mp4">
-                </video>
-              </div> -->
-              <div class="item 4">
-                <video poster="" id="4" autoplay controls muted loop playsinline height="100%" preload="none">
-                  <source src="./static/videos/dl3dv_lr_6v/4.mp4" type="video/mp4">
-                </video>
-              </div>
-              <!-- <div class="item 5">
-                <video poster="" id="5" autoplay controls muted loop playsinline height="100%" preload="none">
-                  <source src="./static/videos/dl3dv_lr_6v/5.mp4" type="video/mp4">
-                </video>
-              </div> -->
-              <div class="item 6">
-                <video poster="" id="6" autoplay controls muted loop playsinline height="100%" preload="none">
-                  <source src="./static/videos/dl3dv_lr_6v/6.mp4" type="video/mp4">
-                </video>
-              </div>
-              <!-- <div class="item 7">
-                <video poster="" id="7" autoplay controls muted loop playsinline height="100%" preload="none">
-                  <source src="./static/videos/dl3dv_lr_6v/7.mp4" type="video/mp4">
-                </video>
-              </div> -->
-              <div class="item 8">
-                <video poster="" id="8" autoplay controls muted loop playsinline height="100%" preload="none">
-                  <source src="./static/videos/dl3dv_lr_6v/8.mp4" type="video/mp4">
-                </video>
-              </div>
-              <!-- <div class="item 9">
-                <video poster="" id="9" autoplay controls muted loop playsinline height="100%" preload="none">
-                  <source src="./static/videos/dl3dv_lr_6v/9.mp4" type="video/mp4">
-                </video>
-              </div> -->
-              <div class="item 10">
-                <video poster="" id="10" autoplay controls muted loop playsinline height="100%" preload="none">
-                  <source src="./static/videos/dl3dv_lr_6v/10.mp4" type="video/mp4">
-                </video>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!--/ 12 Input Views -->
-        <div class="carousel-row-wrapper">
-          <div class="carousel-left-label">
-            <div class="carousel-left-label-text">12 Views</div>
-          </div>
-          <div class="carousel-content">
-            <div id="carousel-dl3dv-12v" class="carousel results-carousel" data-slides-to-show="4">
-              <div class="item 0">
-                <video poster="" id="0" autoplay controls muted loop playsinline height="100%">
-                  <source src="./static/videos/dl3dv_lr_12v/0.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="item 7">
-                <video poster="" id="7" autoplay controls muted loop playsinline height="100%" preload="none">
-                  <source src="./static/videos/dl3dv_lr_12v/7.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="item 6">
-                <video poster="" id="6" autoplay controls muted loop playsinline height="100%" preload="none">
-                  <source src="./static/videos/dl3dv_lr_12v/6.mp4" type="video/mp4">
-                </video>
-              </div>
-              <!-- <div class="item 1">
-                <video poster="" id="1" autoplay controls muted loop playsinline height="100%">
-                  <source src="./static/videos/dl3dv_lr_12v/1.mp4" type="video/mp4">
-                </video>
-              </div> -->
-              <div class="item 2">
-                <video poster="" id="2" autoplay controls muted loop playsinline height="100%">
-                  <source src="./static/videos/dl3dv_lr_12v/2.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="item 3">
-                <video poster="" id="3" autoplay controls muted loop playsinline height="100%">
-                  <source src="./static/videos/dl3dv_lr_12v/3.mp4" type="video/mp4">
-                </video>
-              </div>
-              <!-- <div class="item 4">
-                <video poster="" id="4" autoplay controls muted loop playsinline height="100%" preload="none">
-                  <source src="./static/videos/dl3dv_lr_12v/4.mp4" type="video/mp4">
-                </video>
-              </div> -->
-              <div class="item 5">
-                <video poster="" id="5" autoplay controls muted loop playsinline height="100%" preload="none">
-                  <source src="./static/videos/dl3dv_lr_12v/5.mp4" type="video/mp4">
-                </video>
-              </div>
-              <!-- <div class="item 8">
-                <video poster="" id="8" autoplay controls muted loop playsinline height="100%" preload="none">
-                  <source src="./static/videos/dl3dv_lr_12v/8.mp4" type="video/mp4">
-                </video>
-              </div> -->
-            </div>
-          </div>
-        </div>
-        <!--/ 24 Input Views -->
-        <div class="carousel-row-wrapper">
-          <div class="carousel-left-label">
-            <div class="carousel-left-label-text">24 Views</div>
-          </div>
-          <div class="carousel-content">
-            <div id="carousel-dl3dv-24v" class="carousel results-carousel" data-slides-to-show="4">
-              <div class="item 10">
-                <video poster="" id="10" autoplay controls muted loop playsinline height="100%" preload="none">
-                  <source src="./static/videos/dl3dv_lr_24v/10.mp4" type="video/mp4">
-                </video>
-              </div>
-              <!-- <div class="item 0">
-                <video poster="" id="0" autoplay controls muted loop playsinline height="100%">
-                  <source src="./static/videos/dl3dv_lr_24v/0.mp4" type="video/mp4">
-                </video>
-              </div> -->
-              <div class="item 1">
-                <video poster="" id="1" autoplay controls muted loop playsinline height="100%">
-                  <source src="./static/videos/dl3dv_lr_24v/1.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="item 2">
-                <video poster="" id="2" autoplay controls muted loop playsinline height="100%">
-                  <source src="./static/videos/dl3dv_lr_24v/2.mp4" type="video/mp4">
-                </video>
-              </div>
-              <!-- <div class="item 3">
-                <video poster="" id="3" autoplay controls muted loop playsinline height="100%">
-                  <source src="./static/videos/dl3dv_lr_24v/3.mp4" type="video/mp4">
-                </video>
-              </div> -->
-              <div class="item 4">
-                <video poster="" id="4" autoplay controls muted loop playsinline height="100%" preload="none">
-                  <source src="./static/videos/dl3dv_lr_24v/4.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="item 5">
-                <video poster="" id="5" autoplay controls muted loop playsinline height="100%" preload="none">
-                  <source src="./static/videos/dl3dv_lr_24v/5.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="item 6">
-                <video poster="" id="6" autoplay controls muted loop playsinline height="100%" preload="none">
-                  <source src="./static/videos/dl3dv_lr_24v/6.mp4" type="video/mp4">
-                </video>
-              </div>
-              <!-- <div class="item 7">
-                <video poster="" id="7" autoplay controls muted loop playsinline height="100%" preload="none">
-                  <source src="./static/videos/dl3dv_lr_24v/7.mp4" type="video/mp4">
-                </video>
-              </div> -->
-              <!-- <div class="item 8">
-                <video poster="" id="8" autoplay controls muted loop playsinline height="100%" preload="none">
-                  <source src="./static/videos/dl3dv_lr_24v/8.mp4" type="video/mp4">
-                </video>
-              </div> -->
-              <!-- <div class="item 9">
-                <video poster="" id="9" autoplay controls muted loop playsinline height="100%" preload="none">
-                  <source src="./static/videos/dl3dv_lr_24v/9.mp4" type="video/mp4">
-                </video>
-              </div> -->
-              <!-- <div class="item 11">
-                <video poster="" id="11" autoplay controls muted loop playsinline height="100%" preload="none">
-                  <source src="./static/videos/dl3dv_lr_24v/11.mp4" type="video/mp4">
-                </video>
-              </div> -->
-              <!-- <div class="item 12">
-                <video poster="" id="12" autoplay controls muted loop playsinline height="100%" preload="none">
-                  <source src="./static/videos/dl3dv_lr_24v/12.mp4" type="video/mp4">
-                </video>
-              </div> -->
-            </div>
-          </div>
-        </div>
-
-        <div class="has-text-centered">
-          <p class="subtitle is-5">Inference results on the <b>DL3DV</b> dataset using <b>6, 12, 24</b> context views
-            (top to bottom) at a resolution of 224×224.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!--/ DL3DV HR 960x540 Video -->
-  <section class="hero is-light is-small">
-    <div class="hero-body">
-      <div class="container">
-        <div id="carousel-dl3dv-hr" class="carousel results-carousel" data-slides-to-show="2">
-          <!-- <div class="item 0">
-            <video poster="" id="0" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/dl3dv_hr_32v/0.mp4" type="video/mp4">
-            </video>
-          </div> -->
-          <div class="item 1">
-            <video poster="" id="1" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/dl3dv_hr_32v/1.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item 2">
-            <video poster="" id="2" autoplay controls muted loop playsinline height="100%" preload="none">
-              <source src="./static/videos/dl3dv_hr_32v/2.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item 3">
-            <video poster="" id="3" autoplay controls muted loop playsinline height="100%" preload="none">
-              <source src="./static/videos/dl3dv_hr_32v/3.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item 4">
-            <video poster="" id="4" autoplay controls muted loop playsinline height="100%" preload="none">
-              <source src="./static/videos/dl3dv_hr_32v/4.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item 5">
-            <video poster="" id="5" autoplay controls muted loop playsinline height="100%" preload="none">
-              <source src="./static/videos/dl3dv_hr_32v/5.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item 6">
-            <video poster="" id="6" autoplay controls muted loop playsinline height="100%" preload="none">
-              <source src="./static/videos/dl3dv_hr_32v/6.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item 7">
-            <video poster="" id="7" autoplay controls muted loop playsinline height="100%" preload="none">
-              <source src="./static/videos/dl3dv_hr_32v/7.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-        <div class="has-text-centered">
-          <p class="subtitle is-5">Inference results on the <b>DL3DV</b> dataset using <b>32</b> context views with a
-            resolution of 960×540.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-four-fifths" style="margin-top: -2rem;">
-      <h2 class="title is-3" style="margin-top: 5.0rem;">Qualitative Comparison</h2>
-    </div>
+    </section>
   </div>
 
-  <!--/ DL3DV 224x224 Comparison Video -->
-  <section class="hero is-light is-small">
-    <div class="hero-body">
-      <div class="container">
-
-        <!-- DL3DV 12 context views -->
-        <div id="carousel-comparison-12v" class="carousel results-carousel" data-slides-to-show="2">
-
-          <!-- # 6 -->
-          <div class="video-slider-container" data-view="32">
-            <div class="video-slider-wrapper js-video-slider">
-              <video preload="metadata" class="video-left" autoplay muted loop playsinline disablepictureinpicture
-                disableremoteplayback>
-                <source src="static/videos/comparison/ours_12v/new_0.mp4" type="video/mp4">
-              </video>
-              <video preload="metadata" class="video-right" autoplay muted loop playsinline disablepictureinpicture
-                disableremoteplayback>
-                <source src="static/videos/comparison/yono_12v/new_0.mp4" type="video/mp4">
-              </video>
-
-              <!-- slider bar + handle -->
-              <div class="slider-bar"></div>
-              <div class="slider-handle"></div>
-
-              <div class="video-label video-label-left">
-                <span style="color:#A8D18D;">2Xplat</span>
-              </div>
-              <div class="video-label video-label-right">
-                <span style="color:#7E98F7FF;">YoNoSplat</span>
-              </div>
-
-              <button class="video-toggle-button">
-                <img class="toggle-icon" src="static/images/pause.png" alt="Pause" />
-              </button>
-            </div>
-          </div>
-
-          <!-- # 7 -->
-          <div class="video-slider-container" data-view="32">
-            <div class="video-slider-wrapper js-video-slider">
-              <video preload="metadata" class="video-left" autoplay muted loop playsinline disablepictureinpicture
-                disableremoteplayback>
-                <source src="static/videos/comparison/ours_12v/new_2.mp4" type="video/mp4">
-              </video>
-              <video preload="metadata" class="video-right" autoplay muted loop playsinline disablepictureinpicture
-                disableremoteplayback>
-                <source src="static/videos/comparison/yono_12v/new_2.mp4" type="video/mp4">
-              </video>
-
-              <!-- slider bar + handle -->
-              <div class="slider-bar"></div>
-              <div class="slider-handle"></div>
-
-              <div class="video-label video-label-left">
-                <span style="color:#A8D18D;">2Xplat</span>
-              </div>
-              <div class="video-label video-label-right">
-                <span style="color:#7E98F7FF;">YoNoSplat</span>
-              </div>
-
-              <button class="video-toggle-button">
-                <img class="toggle-icon" src="static/images/pause.png" alt="Pause" />
-              </button>
-            </div>
-          </div>
-
-          <!-- # 1 -->
-          <div class="video-slider-container" data-view="32">
-            <div class="video-slider-wrapper js-video-slider">
-              <video preload="metadata" class="video-left" autoplay muted loop playsinline disablepictureinpicture
-                disableremoteplayback>
-                <source src="static/videos/comparison/ours_12v/ours_4.mp4" type="video/mp4">
-              </video>
-              <video preload="metadata" class="video-right" autoplay muted loop playsinline disablepictureinpicture
-                disableremoteplayback>
-                <source src="static/videos/comparison/yono_12v/yono_4.mp4" type="video/mp4">
-              </video>
-
-              <!-- slider bar + handle -->
-              <div class="slider-bar"></div>
-              <div class="slider-handle"></div>
-
-              <div class="video-label video-label-left">
-                <span style="color:#A8D18D;">2Xplat</span>
-              </div>
-              <div class="video-label video-label-right">
-                <span style="color:#7E98F7FF;">YoNoSplat</span>
-              </div>
-
-              <button class="video-toggle-button">
-                <img class="toggle-icon" src="static/images/pause.png" alt="Pause" />
-              </button>
-            </div>
-          </div>
-
-          <!-- # 2 -->
-          <div class="video-slider-container" data-view="32">
-            <div class="video-slider-wrapper js-video-slider">
-              <video preload="metadata" class="video-left" autoplay muted loop playsinline disablepictureinpicture
-                disableremoteplayback>
-                <source src="static/videos/comparison/ours_12v/ours_1.mp4" type="video/mp4">
-              </video>
-              <video preload="metadata" class="video-right" autoplay muted loop playsinline disablepictureinpicture
-                disableremoteplayback>
-                <source src="static/videos/comparison/yono_12v/yono_1.mp4" type="video/mp4">
-              </video>
-
-              <!-- slider bar + handle -->
-              <div class="slider-bar"></div>
-              <div class="slider-handle"></div>
-
-              <div class="video-label video-label-left">
-                <span style="color:#A8D18D;">2Xplat</span>
-              </div>
-              <div class="video-label video-label-right">
-                <span style="color:#7E98F7FF;">YoNoSplat</span>
-              </div>
-
-              <button class="video-toggle-button">
-                <img class="toggle-icon" src="static/images/pause.png" alt="Pause" />
-              </button>
-            </div>
-          </div>
-
-          <!-- # 5 -->
-          <div class="video-slider-container" data-view="32">
-            <div class="video-slider-wrapper js-video-slider">
-              <video preload="metadata" class="video-left" autoplay muted loop playsinline disablepictureinpicture
-                disableremoteplayback>
-                <source src="static/videos/comparison/ours_12v/ours_5.mp4" type="video/mp4">
-              </video>
-              <video preload="metadata" class="video-right" autoplay muted loop playsinline disablepictureinpicture
-                disableremoteplayback>
-                <source src="static/videos/comparison/yono_12v/yono_5.mp4" type="video/mp4">
-              </video>
-
-              <!-- slider bar + handle -->
-              <div class="slider-bar"></div>
-              <div class="slider-handle"></div>
-
-              <div class="video-label video-label-left">
-                <span style="color:#A8D18D;">2Xplat</span>
-              </div>
-              <div class="video-label video-label-right">
-                <span style="color:#7E98F7FF;">YoNoSplat</span>
-              </div>
-
-              <button class="video-toggle-button">
-                <img class="toggle-icon" src="static/images/pause.png" alt="Pause" />
-              </button>
-            </div>
-          </div>
-
-          <!-- FIXME: Erase or not # 3 -->
-          <div class="video-slider-container" data-view="32">
-            <div class="video-slider-wrapper js-video-slider">
-              <video preload="metadata" class="video-left" autoplay muted loop playsinline disablepictureinpicture
-                disableremoteplayback>
-                <source src="static/videos/comparison/ours_12v/ours_2.mp4" type="video/mp4">
-              </video>
-              <video preload="metadata" class="video-right" autoplay muted loop playsinline disablepictureinpicture
-                disableremoteplayback>
-                <source src="static/videos/comparison/yono_12v/yono_2.mp4" type="video/mp4">
-              </video>
-
-              <!-- slider bar + handle -->
-              <div class="slider-bar"></div>
-              <div class="slider-handle"></div>
-
-              <div class="video-label video-label-left">
-                <span style="color:#A8D18D;">2Xplat</span>
-              </div>
-              <div class="video-label video-label-right">
-                <span style="color:#7E98F7FF;">YoNoSplat</span>
-              </div>
-
-              <button class="video-toggle-button">
-                <img class="toggle-icon" src="static/images/pause.png" alt="Pause" />
-              </button>
-            </div>
-          </div>
-
+  <div class="result-shell result-shell-multirow">
+    <div class="result-head">
+      <div class="result-head-inner">
+        <div class="result-title-group">
+          <span class="result-kicker">Dataset</span>
+          <h3 class="result-title">DL3DV</h3>
         </div>
-
-        <div class="has-text-centered">
-          <p class="subtitle is-5">Comparison between 2Xplat and YoNoSplat on the <b>DL3DV</b> dataset using <b>12</b>
-            context views (top to bottom) with a resolution of 224×224.</p>
+        <div class="result-meta">
+          <span class="result-pill">224x224</span>
+          <span class="result-pill">6 / 12 / 24 Context Views</span>
         </div>
       </div>
     </div>
-  </section>
-  <!-- FIXME -->
+    <section class="hero is-light is-small">
+      <div class="hero-body">
+        <div class="container">
+          <div class="carousel-row-wrapper">
+            <div class="carousel-left-label">
+              <div class="carousel-left-label-text">6 Views</div>
+            </div>
+            <div class="carousel-content">
+              <div id="carousel-dl3dv-6v" class="carousel results-carousel" data-slides-to-show="4">
+                <div class="item 0"><video poster="" id="0" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/dl3dv_lr_6v/0.mp4" type="video/mp4">
+                  </video></div>
+                <div class="item 1"><video poster="" id="1" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/dl3dv_lr_6v/1.mp4" type="video/mp4">
+                  </video></div>
+                <div class="item 4"><video poster="" id="4" autoplay controls muted loop playsinline height="100%"
+                    preload="none">
+                    <source src="./static/videos/dl3dv_lr_6v/4.mp4" type="video/mp4">
+                  </video></div>
+                <div class="item 6"><video poster="" id="6" autoplay controls muted loop playsinline height="100%"
+                    preload="none">
+                    <source src="./static/videos/dl3dv_lr_6v/6.mp4" type="video/mp4">
+                  </video></div>
+                <div class="item 8"><video poster="" id="8" autoplay controls muted loop playsinline height="100%"
+                    preload="none">
+                    <source src="./static/videos/dl3dv_lr_6v/8.mp4" type="video/mp4">
+                  </video></div>
+                <div class="item 10"><video poster="" id="10" autoplay controls muted loop playsinline height="100%"
+                    preload="none">
+                    <source src="./static/videos/dl3dv_lr_6v/10.mp4" type="video/mp4">
+                  </video></div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-row-wrapper">
+            <div class="carousel-left-label">
+              <div class="carousel-left-label-text">12 Views</div>
+            </div>
+            <div class="carousel-content">
+              <div id="carousel-dl3dv-12v" class="carousel results-carousel" data-slides-to-show="4">
+                <div class="item 0"><video poster="" id="0" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/dl3dv_lr_12v/0.mp4" type="video/mp4">
+                  </video></div>
+                <div class="item 7"><video poster="" id="7" autoplay controls muted loop playsinline height="100%"
+                    preload="none">
+                    <source src="./static/videos/dl3dv_lr_12v/7.mp4" type="video/mp4">
+                  </video></div>
+                <div class="item 6"><video poster="" id="6" autoplay controls muted loop playsinline height="100%"
+                    preload="none">
+                    <source src="./static/videos/dl3dv_lr_12v/6.mp4" type="video/mp4">
+                  </video></div>
+                <div class="item 2"><video poster="" id="2" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/dl3dv_lr_12v/2.mp4" type="video/mp4">
+                  </video></div>
+                <div class="item 3"><video poster="" id="3" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/dl3dv_lr_12v/3.mp4" type="video/mp4">
+                  </video></div>
+                <div class="item 5"><video poster="" id="5" autoplay controls muted loop playsinline height="100%"
+                    preload="none">
+                    <source src="./static/videos/dl3dv_lr_12v/5.mp4" type="video/mp4">
+                  </video></div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-row-wrapper">
+            <div class="carousel-left-label">
+              <div class="carousel-left-label-text">24 Views</div>
+            </div>
+            <div class="carousel-content">
+              <div id="carousel-dl3dv-24v" class="carousel results-carousel" data-slides-to-show="4">
+                <div class="item 10"><video poster="" id="10" autoplay controls muted loop playsinline height="100%"
+                    preload="none">
+                    <source src="./static/videos/dl3dv_lr_24v/10.mp4" type="video/mp4">
+                  </video></div>
+                <div class="item 1"><video poster="" id="1" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/dl3dv_lr_24v/1.mp4" type="video/mp4">
+                  </video></div>
+                <div class="item 2"><video poster="" id="2" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/dl3dv_lr_24v/2.mp4" type="video/mp4">
+                  </video></div>
+                <div class="item 4"><video poster="" id="4" autoplay controls muted loop playsinline height="100%"
+                    preload="none">
+                    <source src="./static/videos/dl3dv_lr_24v/4.mp4" type="video/mp4">
+                  </video></div>
+                <div class="item 5"><video poster="" id="5" autoplay controls muted loop playsinline height="100%"
+                    preload="none">
+                    <source src="./static/videos/dl3dv_lr_24v/5.mp4" type="video/mp4">
+                  </video></div>
+                <div class="item 6"><video poster="" id="6" autoplay controls muted loop playsinline height="100%"
+                    preload="none">
+                    <source src="./static/videos/dl3dv_lr_24v/6.mp4" type="video/mp4">
+                  </video></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="result-shell">
+    <div class="result-head">
+      <div class="result-head-inner">
+        <div class="result-title-group">
+          <span class="result-kicker">Dataset</span>
+          <h3 class="result-title">DL3DV</h3>
+        </div>
+        <div class="result-meta">
+          <span class="result-pill">960x540</span>
+          <span class="result-pill">32 Context Views</span>
+        </div>
+      </div>
+    </div>
+    <section class="hero is-light is-small">
+      <div class="hero-body">
+        <div class="container">
+          <div id="carousel-dl3dv-hr" class="carousel results-carousel" data-slides-to-show="2">
+            <div class="item 1"><video poster="" id="1" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/dl3dv_hr_32v/1.mp4" type="video/mp4">
+              </video></div>
+            <div class="item 2"><video poster="" id="2" autoplay controls muted loop playsinline height="100%"
+                preload="none">
+                <source src="./static/videos/dl3dv_hr_32v/2.mp4" type="video/mp4">
+              </video></div>
+            <div class="item 3"><video poster="" id="3" autoplay controls muted loop playsinline height="100%"
+                preload="none">
+                <source src="./static/videos/dl3dv_hr_32v/3.mp4" type="video/mp4">
+              </video></div>
+            <div class="item 4"><video poster="" id="4" autoplay controls muted loop playsinline height="100%"
+                preload="none">
+                <source src="./static/videos/dl3dv_hr_32v/4.mp4" type="video/mp4">
+              </video></div>
+            <div class="item 5"><video poster="" id="5" autoplay controls muted loop playsinline height="100%"
+                preload="none">
+                <source src="./static/videos/dl3dv_hr_32v/5.mp4" type="video/mp4">
+              </video></div>
+            <div class="item 6"><video poster="" id="6" autoplay controls muted loop playsinline height="100%"
+                preload="none">
+                <source src="./static/videos/dl3dv_hr_32v/6.mp4" type="video/mp4">
+              </video></div>
+            <div class="item 7"><video poster="" id="7" autoplay controls muted loop playsinline height="100%"
+                preload="none">
+                <source src="./static/videos/dl3dv_hr_32v/7.mp4" type="video/mp4">
+              </video></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="comparison-shell" id="comparison">
+    <div class="result-head" style="padding-left: 1.25rem; text-align: center;">
+      <h2 class="title is-3" style="margin-top: 2.8rem;">Qualitative Comparison</h2>
+    </div>
+    <section class="hero is-light is-small comparison-hero">
+      <div class="hero-body">
+        <div class="container">
+          <div id="carousel-comparison-12v" class="carousel results-carousel" data-slides-to-show="4">
+
+            <div class="video-slider-container" data-view="32">
+              <div class="video-slider-wrapper js-video-slider">
+                <video preload="metadata" class="video-left" autoplay muted loop playsinline disablepictureinpicture
+                  disableremoteplayback>
+                  <source src="static/videos/comparison/ours_12v/new_0.mp4" type="video/mp4">
+                </video>
+                <video preload="metadata" class="video-right" autoplay muted loop playsinline disablepictureinpicture
+                  disableremoteplayback>
+                  <source src="static/videos/comparison/yono_12v/new_0.mp4" type="video/mp4">
+                </video>
+                <div class="slider-bar"></div>
+                <div class="slider-handle"></div>
+                <div class="video-label video-label-left"><span style="color:#A8D18D;">2Xplat</span></div>
+                <div class="video-label video-label-right"><span style="color:#7E98F7FF;">YoNoSplat</span></div>
+                <button class="video-toggle-button"><img class="toggle-icon" src="static/images/pause.png"
+                    alt="Pause" /></button>
+              </div>
+            </div>
+
+            <div class="video-slider-container" data-view="32">
+              <div class="video-slider-wrapper js-video-slider">
+                <video preload="metadata" class="video-left" autoplay muted loop playsinline disablepictureinpicture
+                  disableremoteplayback>
+                  <source src="static/videos/comparison/ours_12v/new_2.mp4" type="video/mp4">
+                </video>
+                <video preload="metadata" class="video-right" autoplay muted loop playsinline disablepictureinpicture
+                  disableremoteplayback>
+                  <source src="static/videos/comparison/yono_12v/new_2.mp4" type="video/mp4">
+                </video>
+                <div class="slider-bar"></div>
+                <div class="slider-handle"></div>
+                <div class="video-label video-label-left"><span style="color:#A8D18D;">2Xplat</span></div>
+                <div class="video-label video-label-right"><span style="color:#7E98F7FF;">YoNoSplat</span></div>
+                <button class="video-toggle-button"><img class="toggle-icon" src="static/images/pause.png"
+                    alt="Pause" /></button>
+              </div>
+            </div>
+
+            <div class="video-slider-container" data-view="32">
+              <div class="video-slider-wrapper js-video-slider">
+                <video preload="metadata" class="video-left" autoplay muted loop playsinline disablepictureinpicture
+                  disableremoteplayback>
+                  <source src="static/videos/comparison/ours_12v/ours_4.mp4" type="video/mp4">
+                </video>
+                <video preload="metadata" class="video-right" autoplay muted loop playsinline disablepictureinpicture
+                  disableremoteplayback>
+                  <source src="static/videos/comparison/yono_12v/yono_4.mp4" type="video/mp4">
+                </video>
+                <div class="slider-bar"></div>
+                <div class="slider-handle"></div>
+                <div class="video-label video-label-left"><span style="color:#A8D18D;">2Xplat</span></div>
+                <div class="video-label video-label-right"><span style="color:#7E98F7FF;">YoNoSplat</span></div>
+                <button class="video-toggle-button"><img class="toggle-icon" src="static/images/pause.png"
+                    alt="Pause" /></button>
+              </div>
+            </div>
+
+            <div class="video-slider-container" data-view="32">
+              <div class="video-slider-wrapper js-video-slider">
+                <video preload="metadata" class="video-left" autoplay muted loop playsinline disablepictureinpicture
+                  disableremoteplayback>
+                  <source src="static/videos/comparison/ours_12v/ours_1.mp4" type="video/mp4">
+                </video>
+                <video preload="metadata" class="video-right" autoplay muted loop playsinline disablepictureinpicture
+                  disableremoteplayback>
+                  <source src="static/videos/comparison/yono_12v/yono_1.mp4" type="video/mp4">
+                </video>
+                <div class="slider-bar"></div>
+                <div class="slider-handle"></div>
+                <div class="video-label video-label-left"><span style="color:#A8D18D;">2Xplat</span></div>
+                <div class="video-label video-label-right"><span style="color:#7E98F7FF;">YoNoSplat</span></div>
+                <button class="video-toggle-button"><img class="toggle-icon" src="static/images/pause.png"
+                    alt="Pause" /></button>
+              </div>
+            </div>
+
+            <div class="video-slider-container" data-view="32">
+              <div class="video-slider-wrapper js-video-slider">
+                <video preload="metadata" class="video-left" autoplay muted loop playsinline disablepictureinpicture
+                  disableremoteplayback>
+                  <source src="static/videos/comparison/ours_12v/ours_5.mp4" type="video/mp4">
+                </video>
+                <video preload="metadata" class="video-right" autoplay muted loop playsinline disablepictureinpicture
+                  disableremoteplayback>
+                  <source src="static/videos/comparison/yono_12v/yono_5.mp4" type="video/mp4">
+                </video>
+                <div class="slider-bar"></div>
+                <div class="slider-handle"></div>
+                <div class="video-label video-label-left"><span style="color:#A8D18D;">2Xplat</span></div>
+                <div class="video-label video-label-right"><span style="color:#7E98F7FF;">YoNoSplat</span></div>
+                <button class="video-toggle-button"><img class="toggle-icon" src="static/images/pause.png"
+                    alt="Pause" /></button>
+              </div>
+            </div>
+
+            <div class="video-slider-container" data-view="32">
+              <div class="video-slider-wrapper js-video-slider">
+                <video preload="metadata" class="video-left" autoplay muted loop playsinline disablepictureinpicture
+                  disableremoteplayback>
+                  <source src="static/videos/comparison/ours_12v/ours_2.mp4" type="video/mp4">
+                </video>
+                <video preload="metadata" class="video-right" autoplay muted loop playsinline disablepictureinpicture
+                  disableremoteplayback>
+                  <source src="static/videos/comparison/yono_12v/yono_2.mp4" type="video/mp4">
+                </video>
+                <div class="slider-bar"></div>
+                <div class="slider-handle"></div>
+                <div class="video-label video-label-left"><span style="color:#A8D18D;">2Xplat</span></div>
+                <div class="video-label video-label-right"><span style="color:#7E98F7FF;">YoNoSplat</span></div>
+                <button class="video-toggle-button"><img class="toggle-icon" src="static/images/pause.png"
+                    alt="Pause" /></button>
+              </div>
+            </div>
+
+            <div class="video-slider-container" data-view="32">
+              <div class="video-slider-wrapper js-video-slider">
+                <video preload="metadata" class="video-left" autoplay muted loop playsinline disablepictureinpicture
+                  disableremoteplayback>
+                  <source src="static/videos/comparison/ours_12v/ours_3.mp4" type="video/mp4">
+                </video>
+                <video preload="metadata" class="video-right" autoplay muted loop playsinline disablepictureinpicture
+                  disableremoteplayback>
+                  <source src="static/videos/comparison/yono_12v/yono_3.mp4" type="video/mp4">
+                </video>
+                <div class="slider-bar"></div>
+                <div class="slider-handle"></div>
+                <div class="video-label video-label-left"><span style="color:#A8D18D;">2Xplat</span></div>
+                <div class="video-label video-label-right"><span style="color:#7E98F7FF;">YoNoSplat</span></div>
+                <button class="video-toggle-button"><img class="toggle-icon" src="static/images/pause.png"
+                    alt="Pause" /></button>
+              </div>
+            </div>
+
+          </div>
+          <div class="has-text-centered">
+            <p class="subtitle is-5">Comparison between 2Xplat and YoNoSplat on the <b>DL3DV</b> dataset using <b>12</b>
+              context views with a resolution of 224×224.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 
   <script>
     window.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".video-slider-container").forEach((container) => {
-        // 1. Setup Elements
         const wrapper = container.querySelector(".js-video-slider");
         if (!wrapper) return;
-
         const videoLeft = wrapper.querySelector(".video-left");
         const rightContainer = wrapper.querySelector(".video-right");
-
-        // UI Elements
         const toggleBtn = wrapper.querySelector(".video-toggle-button");
         const icon = wrapper.querySelector(".toggle-icon");
         const sliderBar = wrapper.querySelector(".slider-bar");
         const sliderHandle = wrapper.querySelector(".slider-handle");
         const rightLabel = wrapper.querySelector(".video-label-right span");
         const baseView = container.dataset.view || "32";
-
-        // Setup Canvas
         let canvas = wrapper.querySelector("canvas");
         if (!canvas) {
           canvas = document.createElement("canvas");
-          canvas.style.width = "100%";
-          canvas.style.height = "100%";
-          canvas.style.display = "block";
+          canvas.style.width = "100%"; canvas.style.height = "100%"; canvas.style.display = "block";
           wrapper.appendChild(canvas);
-
-          videoLeft.style.display = "none";
-          rightContainer.style.display = "none";
-
+          videoLeft.style.display = "none"; rightContainer.style.display = "none";
           if (sliderBar) sliderBar.style.zIndex = "10";
           if (sliderHandle) sliderHandle.style.zIndex = "11";
         }
         const context = canvas.getContext("2d");
-
-        // DATA CONFIG
-        const rightVideoConfig = [
-          { key: "yono", label32: "YoNoSplat", color: "#7E98F7FF" },
-        ];
-
-        // Get the actual source from the HTML video element
+        const rightVideoConfig = [{ key: "yono", label32: "YoNoSplat", color: "#7E98F7FF" }];
         const rightVideoSource = rightContainer.querySelector('source')?.src || rightContainer.src;
-
-        // 2. PARALLEL VIDEO LOADING
         const loadedRightVideos = rightVideoConfig.map((config) => {
           const v = document.createElement("video");
-          v.muted = true;
-          v.loop = true;
-          v.playsInline = true;
-          v.preload = "auto";
-          v.src = rightVideoSource; // Use the source from HTML
-          v.style.display = "none";
-          rightContainer.appendChild(v);
-          return v;
+          v.muted = true; v.loop = true; v.playsInline = true; v.preload = "auto";
+          v.src = rightVideoSource; v.style.display = "none";
+          rightContainer.appendChild(v); return v;
         });
-
-        // State
         let currentRightIndex = 0;
-
-        // "Latch" variable: Stores the video currently being drawn.
-        // We only update this when the new target is truly ready.
         let activeRenderVideo = loadedRightVideos[0];
-
-        let position = 0.5;
-        let isPlaying = true;
-        let animationId = null;
-
-        /* =======================================================
-           3) Smart Canvas Drawing Loop (The Fix)
-           ======================================================= */
-
+        let position = 0.5, isPlaying = true, animationId = null;
         function resizeCanvas() {
           if (videoLeft.videoWidth > 0 && canvas.width !== videoLeft.videoWidth) {
-            canvas.width = videoLeft.videoWidth;
-            canvas.height = videoLeft.videoHeight;
+            canvas.width = videoLeft.videoWidth; canvas.height = videoLeft.videoHeight;
           }
         }
-
         function drawLoop() {
           if (!videoLeft) return;
-
           resizeCanvas();
-          const w = canvas.width;
-          const h = canvas.height;
-
-          // 1. Draw Left Video
+          const w = canvas.width, h = canvas.height;
           context.drawImage(videoLeft, 0, 0, w, h);
-
-          // 2. Determine Right Video Source
           const targetVideo = loadedRightVideos[currentRightIndex];
-
-          // LATCH LOGIC:
-          // We only switch the visual source if the target video is NOT seeking
-          // and has enough data to render a frame.
-          // If it's still loading the seek, we keep drawing the old video ('activeRenderVideo')
-          // to prevent black flashes or jitter.
           const isReady = targetVideo.readyState >= 2 && !targetVideo.seeking;
-
-          if (isReady) {
-            activeRenderVideo = targetVideo;
-          }
-
-          // 3. Draw the Right Video
+          if (isReady) activeRenderVideo = targetVideo;
           const splitX = w * position;
-          const drawW = w - splitX;
-
-          // Ensure we actually have something to draw
-          if (activeRenderVideo.readyState >= 2) {
-            context.drawImage(activeRenderVideo, splitX, 0, drawW, h, splitX, 0, drawW, h);
-          }
-
-          // Update UI
+          if (activeRenderVideo.readyState >= 2) context.drawImage(activeRenderVideo, splitX, 0, w - splitX, h, splitX, 0, w - splitX, h);
           const pct = position * 100 + "%";
           if (sliderBar) sliderBar.style.left = pct;
           if (sliderHandle) sliderHandle.style.left = pct;
-
           animationId = requestAnimationFrame(drawLoop);
         }
-
-        /* =======================================================
-           4) Interaction
-           ======================================================= */
         function updatePos(clientX) {
           const rect = canvas.getBoundingClientRect();
           position = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
         }
         wrapper.addEventListener("mousemove", (e) => updatePos(e.clientX));
         wrapper.addEventListener("touchstart", (e) => updatePos(e.touches[0].clientX));
-        wrapper.addEventListener("touchmove", (e) => {
-          updatePos(e.touches[0].clientX);
-          e.preventDefault();
-        });
+        wrapper.addEventListener("touchmove", (e) => { updatePos(e.touches[0].clientX); e.preventDefault(); });
         animationId = requestAnimationFrame(drawLoop);
-
-        /* =======================================================
-           5) Multi-Video Sync Logic
-           ======================================================= */
         let syncing = false;
-
         function softSyncLoop() {
           if (!syncing || videoLeft.paused) return;
-
           const masterTime = videoLeft.currentTime;
-
-          // Keep all hidden videos warm and synced
-          loadedRightVideos.forEach(v => {
-            const d = masterTime - v.currentTime;
-            if (Math.abs(d) > 0.05) {
-              v.currentTime = masterTime;
-            }
-          });
-
+          loadedRightVideos.forEach(v => { if (Math.abs(masterTime - v.currentTime) > 0.05) v.currentTime = masterTime; });
           videoLeft.requestVideoFrameCallback(softSyncLoop);
         }
-
-        function startSync() {
-          if (syncing) return;
-          syncing = true;
-          videoLeft.requestVideoFrameCallback(softSyncLoop);
-        }
+        function startSync() { if (syncing) return; syncing = true; videoLeft.requestVideoFrameCallback(softSyncLoop); }
         function stopSync() { syncing = false; }
-
-        /* =======================================================
-           6) Controls (Play/Pause)
-           ======================================================= */
-
         function setAllPlayState(play) {
           if (play) {
-            videoLeft.play();
-            loadedRightVideos.forEach(v => v.play().catch(() => { }));
-            startSync();
-            icon.src = "static/images/pause.png";
-            icon.alt = "Pause";
+            videoLeft.play(); loadedRightVideos.forEach(v => v.play().catch(() => { })); startSync();
+            icon.src = "static/images/pause.png"; icon.alt = "Pause";
           } else {
             videoLeft.pause();
-            // Force precise sync on pause
-            const finalTime = videoLeft.currentTime;
-            loadedRightVideos.forEach(v => {
-              v.pause();
-              v.currentTime = finalTime;
-            });
-            stopSync();
-            icon.src = "static/images/play.png";
-            icon.alt = "Play";
+            const t = videoLeft.currentTime;
+            loadedRightVideos.forEach(v => { v.pause(); v.currentTime = t; }); stopSync();
+            icon.src = "static/images/play.png"; icon.alt = "Play";
           }
         }
-
-        toggleBtn.addEventListener("click", () => {
-          isPlaying = !isPlaying;
-          setAllPlayState(isPlaying);
-        });
-
-        /* =======================================================
-           7) INSTANT SWITCH LOGIC (Simplified)
-           ======================================================= */
-        function updateLabels(idx) {
-          const info = rightVideoConfig[idx];
-          if (rightLabel) {
-            rightLabel.textContent = baseView === "128" ? info.label128 : info.label32;
-            rightLabel.style.color = info.color;
-          }
-        }
-
-        updateLabels(0);
-
-        /* =======================================================
-           8) Initialization
-           ======================================================= */
+        toggleBtn.addEventListener("click", () => { isPlaying = !isPlaying; setAllPlayState(isPlaying); });
+        if (rightLabel) { rightLabel.textContent = "YoNoSplat"; rightLabel.style.color = "#7E98F7FF"; }
         videoLeft.muted = true;
         const p = videoLeft.play();
-        if (p !== undefined) {
-          p.then(() => {
-            setAllPlayState(true);
-          }).catch(() => {
-            isPlaying = false;
-            setAllPlayState(false);
-          });
-        }
+        if (p !== undefined) p.then(() => setAllPlayState(true)).catch(() => { isPlaying = false; setAllPlayState(false); });
       });
     });
   </script>
 
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      const video = document.getElementById("teaser");
-      const wrapper = document.querySelector(".header-video");
-
-      if (!video || !wrapper) return;
-
-      // Make sure it shows the first frame only
-      // video.addEventListener("loadeddata", () => {
-      //   video.currentTime = 0.1;
-      //   video.pause();
-      // });
-
-      wrapper.addEventListener("mouseenter", () => {
-        video.play();
-      });
-
-      wrapper.addEventListener("mouseleave", () => {
-        video.pause();
-        video.currentTime = 0.1; // back to first frame
-      });
-    });
-  </script>
-
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      const wrapper = document.getElementById("image-slider-wrapper");
-      const imgRight = document.getElementById("img-right-element");
-      const sliderBar = wrapper.querySelector(".slider-bar");
-      const sliderHandle = wrapper.querySelector(".slider-handle");
-      const changeBtn = document.getElementById("img-toggle-btn");
-      const rightLabel = document.getElementById("img-right-label").querySelector("span");
-
-      // --- 1. Slider Logic ---
-      const setCenter = () => {
-        imgRight.style.clipPath = "inset(0 0 0 50%)";
-        sliderBar.style.left = "50%";
-        sliderHandle.style.left = "50%";
-      };
-      setCenter();
-
-      wrapper.addEventListener("mousemove", (e) => {
-        const bounds = wrapper.getBoundingClientRect();
-        const offsetX = e.clientX - bounds.left;
-        const percent = offsetX / bounds.width;
-        const clipPercent = Math.min(100, Math.max(0, percent * 100));
-
-        // Clip the Left side of the Right Image to reveal the Left Image underneath
-        imgRight.style.clipPath = `inset(0 0 0 ${clipPercent}%)`;
-        sliderBar.style.left = `${clipPercent}%`;
-        sliderHandle.style.left = `${clipPercent}%`;
-      });
-
-      // Optional: Reset on mouse leave
-      wrapper.addEventListener("mouseleave", () => {
-        // setCenter(); // Uncomment if you want it to snap back to center
-      });
-    });
-  </script>
-  </section>
-
-  <!-- TODO: Add ArXiv Numbers -->
-  <section class="section" id="BibTeX">
+  <section class="section bibtex-shell" id="BibTeX">
     <div class="container is-max-desktop content" style="margin-top: 2rem;">
-      <h2 class="title">BibTeX</h2>
-      <pre><code style="font-size: 1em;">
-        @article{jeong2026twoxplat,
-          title={Two Experts Are Better Than One Generalist: Decoupling Geometry and Appearance for Feed-Forward 3D Gaussian Splatting},
-          author={Hwasik Jeong and Seungryong Lee and and Gyeongjin Kang and Seungkwon Yang and Xiangyu Sun and Seungtae Nam and Eunbyung Park},
-          journal={arXiv preprint arXiv:2512.07806},
-          year={2026}
-        }</code></pre>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">BibTeX</h2>
+        </div>
+      </div>
+      <pre><code style="font-size: 1em;">@article{jeong2026twoxplat,
+  title={Two Experts Are Better Than One Generalist: Decoupling Geometry and Appearance for Feed-Forward 3D Gaussian Splatting},
+  author={Hwasik Jeong and Seungryong Lee and Gyeongjin Kang and Seungkwon Yang and Xiangyu Sun and Seungtae Nam and Eunbyung Park},
+  journal={arXiv preprint arXiv:2512.07806},
+  year={2026}
+}</code></pre>
     </div>
   </section>
 
-  <!-- TODO: Add PDF & Github links -->
-  <footer class="footer">
+  <footer class="footer footer-shell">
     <div class="container">
       <div class="content has-text-centered">
-        <a class="icon-link" href="">
-          <i class="fas fa-file-pdf"></i>
-        </a>
-        <a class="icon-link" href="" class="external-link" disabled>
-          <i class="fab fa-github"></i>
-        </a>
+        <a class="icon-link" href=""><i class="fas fa-file-pdf"></i></a>
+        <a class="icon-link" href="" class="external-link" disabled><i class="fab fa-github"></i></a>
       </div>
       <div class="columns is-centered">
         <div class="column is-8">
           <div class="content">
             <p>
-              Commons Attribution-ShareAlike 4.0 International License</a>.
+              Commons Attribution-ShareAlike 4.0 International License.
               This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
                 target="_blank">Academic Project Page Template</a>
-              which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
             </p>
           </div>
         </div>
