@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" href="./static/images/2Xplat_emoji.png">
+  <link rel="icon" type="image/png" href="./static/images/X.png">
   <title>2Xplat</title>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -164,7 +164,8 @@
     .title-mark {
       position: relative;
       display: inline-block;
-      font-size: clamp(4.9rem, 12.6vw, 8.8rem);
+      /* font-size: clamp(4.9rem, 12.6vw, 8.8rem); */
+      font-size: clamp(3.26rem, 8.4vw, 5.86rem);
       font-weight: 700;
       letter-spacing: -0.06em;
       line-height: 0.9;
@@ -1073,7 +1074,7 @@
 
           <!-- Row 1: 4 authors -->
           <div class="authors-row">
-            <a class="author-link" href="https://github.com/JeongHwaSik">Hwasik Jeong<sup>1*</sup></a>
+            <a class="author-link" href="https://github.com/HwasikJeong">Hwasik Jeong<sup>1*</sup></a>
             <a class="author-link" href="https://github.com/sngryongLee">Seungryong Lee<sup>2*</sup></a>
             <a class="author-link" href="https://github.com/Gynjn">Gyeongjin Kang<sup>2</sup></a>
             <a class="author-link" href="https://github.com/yang-gwon2">Seungkwon Yang<sup>1</sup></a>
@@ -1093,10 +1094,10 @@
           </div>
 
           <!-- Note -->
-          <p class="author-note">
+          <!-- <p class="author-note">
             <span>* Equal contribution</span>
             <span>† Corresponding author</span>
-          </p>
+          </p> -->
 
         </div><!-- /publication-authors -->
         <!-- Buttons -->
@@ -1140,7 +1141,7 @@
           <div class="hero-body" style="margin-top: 0;">
             <video id="teaser" autoplay muted loop playsinline height="100%"
               style="border-radius: 18px; overflow: hidden;">
-              <source src="./static/videos/main_teaser.mp4" type="video/mp4">
+              <source src="./static/videos/main_teaser_final.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -1221,7 +1222,29 @@
     </div>
     <div class="quant-figure">
       <div class="quant-frame">
-        <img src="./static/images/teaser_graph.png" alt="Quantitative comparison figure" />
+        <!-- <img src="./static/images/teaser_graph.png" alt="Quantitative comparison figure" /> -->
+        <img src="./static/images/teaser_graph_v2.png" alt="Quantitative comparison figure" />
+      </div>
+    </div>
+
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-justified" style="margin-top: 2.0rem;">
+            <p>
+              Across all view settings (32, 64, and 128 views), our pose-free method, <b>2Xplat</b>, achieves
+              performance that is
+              consistently comparable to pose-dependent approaches, with only a small gap to the best-performing
+              baseline. This demonstrates that our model can effectively recover high-quality rendering without
+              relying on explicit camera pose supervision.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class=" quant-figure">
+      <div class="quant-frame">
+        <img src="./static/images/pose_depend_comparison.png" alt="Quantitative comparison figure" />
       </div>
     </div>
   </section>
@@ -1692,7 +1715,7 @@
       <pre><code style="font-size: 1em;">@article{jeong2026twoxplat,
   title={Two Experts Are Better Than One Generalist: Decoupling Geometry and Appearance for Feed-Forward 3D Gaussian Splatting},
   author={Hwasik Jeong and Seungryong Lee and Gyeongjin Kang and Seungkwon Yang and Xiangyu Sun and Seungtae Nam and Eunbyung Park},
-  journal={arXiv preprint arXiv:2512.07806},
+  journal={arXiv preprint arXiv:},
   year={2026}
 }</code></pre>
     </div>
