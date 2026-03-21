@@ -33,10 +33,7 @@
     /* ── HEADER / AUTHOR / BUTTON OVERRIDES ── */
 
     html {
-      background:
-        radial-gradient(circle at top left, rgba(216, 199, 178, 0.88), transparent 30%),
-        radial-gradient(circle at top right, rgba(196, 209, 228, 0.76), transparent 28%),
-        linear-gradient(180deg, #f1ece4 0%, #e9e1d7 44%, #e1d7cb 100%);
+      background: white;
     }
 
     /* Nav */
@@ -49,9 +46,7 @@
       justify-content: space-between;
       padding: 0 2rem;
       height: 56px;
-      background:
-        linear-gradient(135deg, rgba(234, 226, 216, 0.94), rgba(248, 242, 234, 0.88)),
-        linear-gradient(90deg, rgba(8, 196, 55, 0.05), rgba(19, 30, 226, 0.07));
+      background: white;
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(77, 67, 55, 0.14);
@@ -165,7 +160,8 @@
       position: relative;
       display: inline-block;
       /* font-size: clamp(4.9rem, 12.6vw, 8.8rem); */
-      font-size: clamp(3.26rem, 8.4vw, 5.86rem);
+      /* font-size: clamp(3.26rem, 8.4vw, 5.86rem); */
+      font-size: clamp(4rem, 8.4vw, 4rem);
       font-weight: 700;
       letter-spacing: -0.06em;
       line-height: 0.9;
@@ -201,13 +197,26 @@
 
     .title-sub {
       margin-top: 2.5rem;
-      max-width: 760px;
+      max-width: 100%;
+      white-space: nowrap;
       font-family: 'Cormorant Infant', 'Castoro', serif;
-      font-size: clamp(1.02rem, 2.5vw, 2rem);
+      font-size: clamp(1.02rem, 2.5vw, 2.5rem);
       font-weight: 400;
       letter-spacing: -0.01em;
       line-height: 1.35;
       color: #3f4b62;
+    }
+
+    .title-sub .x-mark {
+      display: inline-block;
+      background: linear-gradient(90deg, #08c437, #131ee2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      transform: translateY(-0.02em);
+      margin: 0em 0em;
+      letter-spacing: 0.005em;
+      font-weight: 700;
     }
 
     /* ── AUTHORS ── */
@@ -616,7 +625,7 @@
     }
 
     .section-tone-warm {
-      background: linear-gradient(180deg, rgba(255, 249, 241, 0.38), rgba(250, 243, 233, 0.22));
+      background: white;
     }
 
     .section-tone-cool {
@@ -1061,10 +1070,10 @@
         <!-- Title -->
         <h1 class="title is-1 publication-title">
           <span class="title-lockup">
-            <span class="title-stack">
-              <!-- <span class="title-mark">2<span class="x-mark">X</span>plat<img src="./static/images/2Xplat_emoji.png" alt="" class="title-badge"></span> -->
-              <span class="title-mark">2<span class="x-mark">X</span>plat</span>
-              <span class="title-sub">Two Experts Are Better Than One Generalist</span>
+            <span class="title-stack" style="margin-top: -5.0rem;">
+              <!-- <span class="title-mark">2<span class="x-mark">X</span>plat</span> -->
+              <span class="title-sub">2<span class="x-mark">X</span>plat: Two Experts Are Better Than One
+                Generalist</span>
             </span>
           </span>
         </h1>
@@ -1076,7 +1085,7 @@
           <div class="authors-row">
             <a class="author-link" href="https://github.com/HwasikJeong">Hwasik Jeong<sup>1*</sup></a>
             <a class="author-link" href="https://github.com/sngryongLee">Seungryong Lee<sup>2*</sup></a>
-            <a class="author-link" href="https://github.com/Gynjn">Gyeongjin Kang<sup>2</sup></a>
+            <a class="author-link" href="https://gynjn.github.io/info/">Gyeongjin Kang<sup>2</sup></a>
             <a class="author-link" href="https://github.com/yang-gwon2">Seungkwon Yang<sup>1</sup></a>
           </div>
 
@@ -1164,7 +1173,7 @@
               built on geometry-centric 3D foundation models, to jointly estimate camera poses and synthesize 3DGS
               representations within a single network. While architecturally streamlined, such ``all-in-one'' designs
               may be suboptimal for high-fidelity 3DGS generation, as they entangle geometric reasoning and appearance
-              modeling within a shared representation. In this work, we introduce \textit{2Xplat}, a pose-free
+              modeling within a shared representation. In this work, we introduce <b>2Xplat</b>, a pose-free
               feed-forward 3DGS framework based on a two-expert design that explicitly separates geometry estimation
               from Gaussian generation. A dedicated geometry expert first predicts camera poses, which are then
               explicitly passed to a powerful appearance expert that synthesizes 3D Gaussians. Despite its conceptual
@@ -1213,8 +1222,11 @@
           <div class="content has-text-justified">
             <p>
               <b>2Xplat</b> consistently achieves higher PSNR than the previous state-of-the-art method across different
-              view settings and backbone architectures while maintaining comparable or significantly faster inference
-              speed, demonstrating its robustness and efficiency.
+              view settings and backbone architectures while maintaining comparable or significantly
+              faster inference
+              speed, demonstrating its robustness and efficiency. The results shown in the plot below are measured on
+              DL3DV at
+              a resolution of 224×224, with inference speed evaluated on a single NVIDIA RTX 3090 GPU.
             </p>
           </div>
         </div>
@@ -1232,9 +1244,12 @@
         <div class="column is-four-fifths">
           <div class="content has-text-justified" style="margin-top: 2.0rem;">
             <p>
-              Across all view settings (32, 64, and 128 views), our pose-free method, <b>2Xplat</b>, achieves
+              As shown in the graph below, across all view settings (32, 64, and 128 views) on DL3DV at a resolution of
+              960x540, our "pose-free"
+              method,
+              <b>2Xplat</b>, achieves
               performance that is
-              consistently comparable to pose-dependent approaches, with only a small gap to the best-performing
+              consistently comparable to "pose-dependent" approaches, with only a small gap to the best-performing
               baseline. This demonstrates that our model can effectively recover high-quality rendering without
               relying on explicit camera pose supervision.
             </p>
